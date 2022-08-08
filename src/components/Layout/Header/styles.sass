@@ -1,0 +1,102 @@
+@use '../../../styles/util' as *
+
+.flex
+    display: flex
+
+    &__center
+        &--y
+            align-items: center
+
+        &--x
+            justify-content: center
+
+header
+    position: relative
+    z-index: 100
+    padding: 1em 0
+    background-color: var(--color-bg-topbar)
+
+    .container
+        @include container-a
+
+    .flex-wrapper, .flex-wrapper > div, .search-wrapper, .search-wrapper > div, .input-wrapper, .icon-wrapper, .right > .icons
+        display: flex
+        align-items: center
+
+    .flex-wrapper > div, .search-wrapper, .search-wrapper > div, .icon-wrapper, .right > .icons
+        justify-content: center
+
+    .flex-wrapper
+        justify-content: space-between
+
+    .sidedrawer-toggler
+        display: flex
+
+    .logo
+        padding-left: 1em
+
+    .icon-wrapper
+        height: 40px
+        width: 40px
+
+        &.button
+            border: solid 1px transparent
+            border-radius: 50%
+            transition: var(--transition)
+
+            &:active
+                border-color: var(--color-border)
+                background-color: var(--color-bg-button-hover)
+
+    .search-wrapper
+        .input-wrapper
+            border: solid 1px transparent
+            // transition: var(--transition)
+
+            &.focused
+                border-color: var(--color-secondary)
+
+        .voice-icon, > .text, input
+            background-color: var(--color-bg-search-input)
+
+        .focus-icon
+            display: none
+            order: -1
+
+        .search-icon
+            width: 64px
+            background-color: var(--color-bg-button)
+             
+        .voice-icon
+            border-radius: 50%
+            margin-left: 1em
+            
+        input
+            border: none
+            outline: none
+            appearance: none
+            padding: 0 1em
+            width: 420px
+            height: 40px
+
+            &:focus 
+                padding-left: 0
+
+                & + .focus-icon
+                    display: flex 
+
+    .right 
+        .icon-wrapper
+            margin-left: .5em
+
+        .user-avatar
+            text-transform: uppercase
+            color: var(--color-text-light)
+
+            > div
+                border-radius: 50%
+                background-color: seagreen
+
+
+
+        
