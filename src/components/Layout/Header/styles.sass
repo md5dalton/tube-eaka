@@ -56,12 +56,12 @@ header
             &.focused
                 border-color: var(--color-secondary)
 
-        .voice-icon, > .text, input
+        .voice-icon, input, .focus-icon
             background-color: var(--color-bg-search-input)
 
         .focus-icon
-            display: none
             order: -1
+            visibility: hidden
 
         .search-icon
             width: 64px
@@ -75,15 +75,14 @@ header
             border: none
             outline: none
             appearance: none
-            padding: 0 1em
+            padding: 0 .5em
             width: 420px
             height: 40px
 
             &:focus 
-                padding-left: 0
 
                 & + .focus-icon
-                    display: flex 
+                    visibility: visible
 
     .right 
         .icon-wrapper
