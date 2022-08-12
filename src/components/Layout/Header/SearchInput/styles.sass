@@ -1,0 +1,40 @@
+@use '../../../../styles/util' as *
+
+#search-wrapper
+    @include flex
+
+    > div, #input-wrapper
+        @include flex
+
+    #input-wrapper
+        border: solid 1px transparent
+        // transition: var(--transition)
+
+        &.focused
+            border-color: var(--color-secondary)
+
+    #voice-icon, input, #focus-icon
+        background-color: var(--color-bg-search-input)
+
+    #focus-icon
+        order: -1
+        visibility: hidden
+
+    .search-icon
+        width: 64px
+        background-color: var(--color-bg-button)
+            
+    #voice-icon
+        border-radius: 50%
+        margin-left: 1em
+        
+    input
+        border: none
+        outline: none
+        appearance: none
+        padding: 0 .5em
+        width: 420px
+        height: 40px
+
+        &:focus + #focus-icon
+            visibility: visible

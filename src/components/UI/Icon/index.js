@@ -1,3 +1,7 @@
 import React from "react"
 
-export default props => <ion-icon class="icon" name={props.name}></ion-icon>
+export default ({ name, className, ...rest }) => (
+    <div className={`icon-wrapper${className ? " " + className : ""}`} {...rest}>
+        <ion-icon class="icon" name={name}></ion-icon>
+    </div>
+)

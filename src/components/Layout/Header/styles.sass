@@ -1,41 +1,13 @@
 @use '../../../styles/util' as *
 
-.flex
-    display: flex
-
-    &__center
-        &--y
-            align-items: center
-
-        &--x
-            justify-content: center
-
 header
     position: relative
     z-index: 100
     padding: 1em 0
     background-color: var(--color-bg-topbar)
-
-    .container
-        @include container-a
-
-    .flex-wrapper, .flex-wrapper > div, .search-wrapper, .search-wrapper > div, .input-wrapper, .icon-wrapper, .right > .icons
-        display: flex
-        align-items: center
-
-    .flex-wrapper > div, .search-wrapper, .search-wrapper > div, .icon-wrapper, .right > .icons
-        justify-content: center
-
-    .flex-wrapper
-        justify-content: space-between
-
-    .sidedrawer-toggler
-        display: flex
-
-    .logo
-        padding-left: 1em
-
+    
     .icon-wrapper
+        @include flex(center)
         height: 40px
         width: 40px
 
@@ -48,45 +20,34 @@ header
                 border-color: var(--color-border)
                 background-color: var(--color-bg-button-hover)
 
-    .search-wrapper
-        .input-wrapper
-            border: solid 1px transparent
-            // transition: var(--transition)
+    .flex-wrapper
+        @include flex(space-between)
 
-            &.focused
-                border-color: var(--color-secondary)
+        > div, #sidedrawer-toggler
+            @include flex
 
-        .voice-icon, input, .focus-icon
-            background-color: var(--color-bg-search-input)
+    .logo
+        padding-left: 5px
 
-        .focus-icon
-            order: -1
-            visibility: hidden
+    #right
+        .icons
+            @include flex
 
-        .search-icon
-            width: 64px
-            background-color: var(--color-bg-button)
-             
-        .voice-icon
-            border-radius: 50%
-            margin-left: 1em
-            
-        input
-            border: none
-            outline: none
-            appearance: none
-            padding: 0 .5em
-            width: 420px
-            height: 40px
-
-            &:focus 
-
-                & + .focus-icon
-                    visibility: visible
-
-    .right 
         .icon-wrapper
             margin-left: .5em
+
+        .user
+            padding-left: .5em
+
+            .icon-wrapper
+                margin-left: 0
+
+            button
+                padding: 0
+                border: solid 1px var(--color-secondary)
+                color: var(--color-secondary)
+                padding-right: .5em
+                border-radius: 3px
 
         .user-avatar
             text-transform: uppercase
@@ -96,6 +57,17 @@ header
                 border-radius: 50%
                 background-color: seagreen
 
+    @include small-only
+        #middle
+            display: none !important
 
+        #right
+            #create-new-video, #notifications
+                display: none
+
+    @include medium
+        #right
+            .toggler
+                display: none
 
         
