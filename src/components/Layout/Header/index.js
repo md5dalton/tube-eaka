@@ -32,11 +32,17 @@ export default ({ sideDrawerIsOpen, sideDrawerToggleHandler }) => {
                             <Icon className="button toggler" id="context-menu-toggler" name="ellipsis-vertical" />
                         </div>
                         <div className="user">
-                            <button>
-                                <Icon name="person-circle-outline" />
-                                <span>login</span>
-                            </button>
-                            {/* <div className="icon-wrapper">m</div> */}
+                            {
+                                isAuthenticated ?
+                                <div className="user-avatar">
+                                    <div className="icon-wrapper">m</div>
+                                </div>
+                                :
+                                <button>
+                                    <Icon name="person-circle-outline" />
+                                    <span>login</span>
+                                </button>
+                            }
                         </div>
                     </div>
                 </div>
